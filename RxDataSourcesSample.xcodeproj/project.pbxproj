@@ -23,6 +23,8 @@
 		C26C11E32105738E00B802A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26C11E12105738E00B802A3 /* LaunchScreen.storyboard */; };
 		C26C11EE2105738F00B802A3 /* RxDataSourcesSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C11ED2105738F00B802A3 /* RxDataSourcesSampleTests.swift */; };
 		C26C11F92105738F00B802A3 /* RxDataSourcesSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C11F82105738F00B802A3 /* RxDataSourcesSampleUITests.swift */; };
+		C27AF8DD21100FB8006A8CB8 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27AF8DC21100FB8006A8CB8 /* UIViewExtension.swift */; };
+		C27AF8DF21100FC7006A8CB8 /* UITableViewCell+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27AF8DE21100FC7006A8CB8 /* UITableViewCell+Rx.swift */; };
 		E9EC056EC22D83486A11D45A /* Pods_RxDataSourcesSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966B75F979452EED479594C4 /* Pods_RxDataSourcesSampleTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +74,8 @@
 		C26C11F42105738F00B802A3 /* RxDataSourcesSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxDataSourcesSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C26C11F82105738F00B802A3 /* RxDataSourcesSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxDataSourcesSampleUITests.swift; sourceTree = "<group>"; };
 		C26C11FA2105738F00B802A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C27AF8DC21100FB8006A8CB8 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		C27AF8DE21100FC7006A8CB8 /* UITableViewCell+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Rx.swift"; sourceTree = "<group>"; };
 		FE5B4C15296730FAD5232EAC /* Pods-RxDataSourcesSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxDataSourcesSampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxDataSourcesSampleTests/Pods-RxDataSourcesSampleTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +134,8 @@
 			children = (
 				C26C11D82105738E00B802A3 /* AppDelegate.swift */,
 				C2134C9A2105C9E500860912 /* UITableViewExtension.swift */,
+				C27AF8DC21100FB8006A8CB8 /* UIViewExtension.swift */,
+				C27AF8DE21100FC7006A8CB8 /* UITableViewCell+Rx.swift */,
 				C2134C8C2105C7D100860912 /* SampleSectionModel.swift */,
 				C2134C8E2105C7E000860912 /* SampleViewController.swift */,
 				C2134C902105C7E900860912 /* SampleViewModel.swift */,
@@ -405,11 +411,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2134C952105C81700860912 /* SampleType2Cell.swift in Sources */,
+				C27AF8DF21100FC7006A8CB8 /* UITableViewCell+Rx.swift in Sources */,
 				C2134C8D2105C7D100860912 /* SampleSectionModel.swift in Sources */,
 				C2134C8F2105C7E000860912 /* SampleViewController.swift in Sources */,
 				C2134C932105C80200860912 /* SampleType1Cell.swift in Sources */,
 				C26C11D92105738E00B802A3 /* AppDelegate.swift in Sources */,
 				C2134C912105C7E900860912 /* SampleViewModel.swift in Sources */,
+				C27AF8DD21100FB8006A8CB8 /* UIViewExtension.swift in Sources */,
 				C2134C9B2105C9E500860912 /* UITableViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

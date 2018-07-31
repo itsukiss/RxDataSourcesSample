@@ -33,6 +33,9 @@ class SampleViewController: UIViewController {
     
     @IBAction func addType1(_ sender: UIButton) {
         viewModel.addType1()
+        #if DEBUG
+        print("RxResourcesCount: \(RxSwift.Resources.total)")
+        #endif
     }
     
     @IBAction func addType2(_ sender: UIButton) {
