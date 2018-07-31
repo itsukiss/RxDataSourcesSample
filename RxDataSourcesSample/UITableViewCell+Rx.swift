@@ -14,10 +14,10 @@ extension Reactive where Base: UITableViewCell {
         return base.tapGesture().takeUntil(prepareForReuse)
     }
     
-    var prepareForReuse: Observable<Void> {
+    private var prepareForReuse: Observable<Void> {
         return sentMessage(#selector(base.prepareForReuse))
-            .map { [weak base] _ in
+            .do(onNext: { [weak base] _ in
                 base?.removeTapGestures()
-        }
+            }).map { _ in }
     }
 }
