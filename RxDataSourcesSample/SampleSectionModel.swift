@@ -44,16 +44,30 @@ final class SampleAdapter: NSObject, UITableViewDelegate {
         case .sample1(let data):
             let cell = table.dequeueReusableCell(withIdentifier: "SampleType1Cell", for: indexPath) as! SampleType1Cell
             cell.data = data
-            
+            let _ = cell.rx.tapGesture
+                .subscribe(onNext: { _ in
+                    // ---Debug Code---（セルタップ時の挙動をここに書く）
+                    print(indexPath.row)
+                    let mirror = Mirror(reflecting: data)
+                    print(type(of: data))
+                    mirror.children.forEach { print("\($0 ?? "unknown"): \($1)") }
+                }, onCompleted: {
+                    print("\(indexPath.row): is Reused")
+                    // ---Debug Code---
+                })
             return cell
         case .other(let data):
             let cell = table.dequeueReusableCell(withIdentifier: "SampleType2Cell", for: indexPath) as! SampleType2Cell
             cell.data = data
+            let _ = cell.rx.tapGesture
+                .subscribe(onNext: { _ in
+                    // ---Debug Code---（セルタップ時の挙動をここに書く）
+                    print(indexPath.row)
+                }, onCompleted: {
+                    print("\(indexPath.row): is Reused")
+                    // ---Debug Code---
+                })
             return cell
         }
     })
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel?.remove(model: dataSource[0].items[indexPath.row])
-    }
 }
