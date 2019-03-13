@@ -13,9 +13,13 @@ import RxDataSources
 
 class SampleViewController: UIViewController {
     
-    private let viewModel = SampleViewModel()
     private var adapter: SampleAdapter!
     private let disposeBag = DisposeBag()
+    
+    @IBOutlet weak var type1Button: UIButton!
+    @IBOutlet weak var type2Button: UIButton!
+    @IBOutlet weak var type3Button: UIButton!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -25,26 +29,27 @@ class SampleViewController: UIViewController {
         }
     }
     
+    lazy var viewModel: SampleViewModel = {
+        let input = SampleViewModel.Input(
+            tapType1: type1Button.rx.tap.asObservable(),
+            tapType2: type2Button.rx.tap.asObservable(),
+            tapType3: type3Button.rx.tap.asObservable(),
+            selectSection: segmentedControl.rx.value.asObservable()
+        )
+        return SampleViewModel(input: input)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         adapter = SampleAdapter(viewModel: viewModel)
         tableView.rx.setDelegate(adapter).disposed(by: disposeBag)
-        viewModel.sampleData.bind(to: tableView.rx.items(dataSource: adapter.dataSource)).disposed(by: disposeBag)
+        bindViewModel()
+        viewModel.viewDidLoad.onNext(())
     }
     
-    @IBAction func addType1(_ sender: UIButton) {
-        viewModel.addType1()
-        #if DEBUG
-        print("RxResourcesCount: \(RxSwift.Resources.total)")
-        #endif
+    private func bindViewModel() {
+        viewModel.sampleData
+        .bind(to: tableView.rx.items(dataSource: adapter.dataSource))
+        .disposed(by: disposeBag)
     }
-    
-    @IBAction func addType2(_ sender: UIButton) {
-        viewModel.addType2()
-    }
-    
-    @IBAction func addType3(_ sender: UIButton) {
-        viewModel.addType3()
-    }
-    
 }

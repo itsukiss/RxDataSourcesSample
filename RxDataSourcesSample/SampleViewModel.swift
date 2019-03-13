@@ -21,59 +21,73 @@ struct SampleData: IdentifiableType, Equatable {
     }
 }
 
-enum SectionID: String, IdentifiableType {
+enum SectionID: Int, IdentifiableType {
     case section1
     case section2
     case section3
     
-    var identity: String {
+    var identity: Int {
         return self.rawValue
     }
 }
 
 class SampleViewModel {
     
-    var sampleData: Observable<[SampleSectionModel]> {
-        return sampleDataRelay.asObservable()
-    }
+    // input
+    let viewDidLoad: AnyObserver<Void>
+    let sampleData: Observable<[SampleSectionModel]>
     
-    private let sampleDataRelay = BehaviorRelay<[SampleSectionModel]>(value: [])
     
-    private func fetch(shouldRefresh: Bool = false, type: SampleSectionItem) {
-        var preItems = sampleDataRelay.value.first?.items ?? []
-        preItems.append(type)
-        let items = shouldRefresh ? [type] : preItems
-        let sectionModel = SampleSectionModel(model: .section1, items: items)
-        sampleDataRelay.accept([sectionModel])
-    }
+    private let disposeBag = DisposeBag()
     
-    func addType1() {
-        let preItems = sampleDataRelay.value.first?.items ?? []
-        let data = SampleData(name: "data\(preItems.count)", image: UIImage(named: "kendama"))
-        fetch(type: .sample1(data: data))
-    }
+    typealias Input = (
+        tapType1: Observable<Void>,
+        tapType2: Observable<Void>,
+        tapType3: Observable<Void>,
+        selectSection: Observable<Int>
+    )
     
-    func addType2() {
-        let preItems = sampleDataRelay.value.first?.items ?? []
-        let data = SampleData(name: "data\(preItems.count)", image: UIImage(named: "kendama"))
-        fetch(type: .sample2(data: data))
-    }
+    typealias Dependency = (
+        service: SampleServiceProtocol,
+        provider: SampleDataProviderProtocol
+    )
     
-    func addType3() {
-        var dataList: [SampleData] = []
-        for i in 0...9 {
-            let data = SampleData(name: "collection\(i)", image: UIImage(named: "kendama"))
-            dataList.append(data)
-        }
+    init(input: Input, dependency: Dependency = Dependency(service: SampleService(), provider: SampleDataProvider())) {
         
-        fetch(type: .sample3(dataList: dataList))
-    }
-    
-    func remove(model: SampleSectionItem) {
-        var preItems = sampleDataRelay.value.first?.items ?? []
-        guard let index = preItems.index(of: model) else { return }
-        preItems.remove(at: index)
-        let sectionModel = SampleSectionModel(model: .section1, items: preItems)
-        sampleDataRelay.accept([sectionModel])
+        let viewDidLoadSubject = PublishSubject<Void>()
+        let sampleDataRelay = BehaviorRelay<[SampleSectionModel]>(value: [])
+        let selectSectionRelay = BehaviorRelay<SectionID>(value: .section1)
+        
+        viewDidLoad = viewDidLoadSubject.asObserver()
+        sampleData = sampleDataRelay.asObservable()
+        
+        input.selectSection
+            .map { SectionID(rawValue: $0) ?? .section1 }
+            .bind(to: selectSectionRelay)
+            .disposed(by: disposeBag)
+        
+        input.tapType1
+            .map { dependency.provider.getMockData(count: 1).first }
+            .flatMap { Observable.from(optional: $0) }
+            .map { SampleSectionItem.sample1(data: $0) }
+            .map { dependency.service.addSectionModel(storedData: sampleDataRelay.value, sectionID: selectSectionRelay.value, item: $0) }
+            .bind(to: sampleDataRelay)
+            .disposed(by: disposeBag)
+        
+        input.tapType2
+            .map { dependency.provider.getMockData(count: 1).first }
+            .flatMap { Observable.from(optional: $0) }
+            .map { SampleSectionItem.sample2(data: $0) }
+            .map { dependency.service.addSectionModel(storedData: sampleDataRelay.value, sectionID: selectSectionRelay.value, item: $0) }
+            .bind(to: sampleDataRelay)
+            .disposed(by: disposeBag)
+        
+        input.tapType3
+            .map { dependency.provider.getMockData(count: 10) }
+            .map { SampleSectionItem.sample3(dataList: $0) }
+            .map { dependency.service.addSectionModel(storedData: sampleDataRelay.value, sectionID: selectSectionRelay.value, item: $0) }
+            .bind(to: sampleDataRelay)
+            .disposed(by: disposeBag)
+        
     }
 }
