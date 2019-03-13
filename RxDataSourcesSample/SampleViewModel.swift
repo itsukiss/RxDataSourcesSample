@@ -11,10 +11,14 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-struct SampleData {
+struct SampleData: IdentifiableType, Equatable {
     let id = UUID().uuidString
     let name: String
     let image: UIImage?
+    
+    var identity: String {
+        return id
+    }
 }
 
 enum SectionID: String, IdentifiableType {
@@ -52,7 +56,17 @@ class SampleViewModel {
     func addType2() {
         let preItems = sampleDataRelay.value.first?.items ?? []
         let data = SampleData(name: "data\(preItems.count)", image: UIImage(named: "kendama"))
-        fetch(type: .other(data: data))
+        fetch(type: .sample2(data: data))
+    }
+    
+    func addType3() {
+        var dataList: [SampleData] = []
+        for i in 0...9 {
+            let data = SampleData(name: "collection\(i)", image: UIImage(named: "kendama"))
+            dataList.append(data)
+        }
+        
+        fetch(type: .sample3(dataList: dataList))
     }
     
     func remove(model: SampleSectionItem) {

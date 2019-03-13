@@ -17,6 +17,10 @@
 		C2134C972105C90D00860912 /* SampleType1Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2134C962105C90D00860912 /* SampleType1Cell.xib */; };
 		C2134C992105C91800860912 /* SampleType2Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2134C982105C91800860912 /* SampleType2Cell.xib */; };
 		C2134C9B2105C9E500860912 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2134C9A2105C9E500860912 /* UITableViewExtension.swift */; };
+		C26421C82238BDF5008C0CB4 /* SampleType3Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C26421C72238BDF5008C0CB4 /* SampleType3Cell.xib */; };
+		C26421CA2238BE2A008C0CB4 /* SampleType3Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26421C92238BE2A008C0CB4 /* SampleType3Cell.swift */; };
+		C26421CC2238C6DD008C0CB4 /* SampleTypeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26421CB2238C6DD008C0CB4 /* SampleTypeCollectionCell.swift */; };
+		C26421D02238C72E008C0CB4 /* SampleTypeCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C26421CF2238C72E008C0CB4 /* SampleTypeCollectionCell.xib */; };
 		C26C11D92105738E00B802A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C11D82105738E00B802A3 /* AppDelegate.swift */; };
 		C26C11DE2105738E00B802A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26C11DC2105738E00B802A3 /* Main.storyboard */; };
 		C26C11E02105738E00B802A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C26C11DF2105738E00B802A3 /* Assets.xcassets */; };
@@ -62,6 +66,10 @@
 		C2134C962105C90D00860912 /* SampleType1Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleType1Cell.xib; sourceTree = "<group>"; };
 		C2134C982105C91800860912 /* SampleType2Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleType2Cell.xib; sourceTree = "<group>"; };
 		C2134C9A2105C9E500860912 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		C26421C72238BDF5008C0CB4 /* SampleType3Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleType3Cell.xib; sourceTree = "<group>"; };
+		C26421C92238BE2A008C0CB4 /* SampleType3Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleType3Cell.swift; sourceTree = "<group>"; };
+		C26421CB2238C6DD008C0CB4 /* SampleTypeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTypeCollectionCell.swift; sourceTree = "<group>"; };
+		C26421CF2238C72E008C0CB4 /* SampleTypeCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleTypeCollectionCell.xib; sourceTree = "<group>"; };
 		C26C11D52105738E00B802A3 /* RxDataSourcesSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxDataSourcesSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C26C11D82105738E00B802A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C26C11DD2105738E00B802A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -141,8 +149,12 @@
 				C2134C902105C7E900860912 /* SampleViewModel.swift */,
 				C2134C922105C80200860912 /* SampleType1Cell.swift */,
 				C2134C942105C81700860912 /* SampleType2Cell.swift */,
+				C26421C92238BE2A008C0CB4 /* SampleType3Cell.swift */,
+				C26421CB2238C6DD008C0CB4 /* SampleTypeCollectionCell.swift */,
 				C2134C962105C90D00860912 /* SampleType1Cell.xib */,
 				C2134C982105C91800860912 /* SampleType2Cell.xib */,
+				C26421C72238BDF5008C0CB4 /* SampleType3Cell.xib */,
+				C26421CF2238C72E008C0CB4 /* SampleTypeCollectionCell.xib */,
 				C26C11DC2105738E00B802A3 /* Main.storyboard */,
 				C26C11DF2105738E00B802A3 /* Assets.xcassets */,
 				C26C11E12105738E00B802A3 /* LaunchScreen.storyboard */,
@@ -302,7 +314,9 @@
 			files = (
 				C26C11E32105738E00B802A3 /* LaunchScreen.storyboard in Resources */,
 				C2134C972105C90D00860912 /* SampleType1Cell.xib in Resources */,
+				C26421D02238C72E008C0CB4 /* SampleTypeCollectionCell.xib in Resources */,
 				C26C11E02105738E00B802A3 /* Assets.xcassets in Resources */,
+				C26421C82238BDF5008C0CB4 /* SampleType3Cell.xib in Resources */,
 				C2134C992105C91800860912 /* SampleType2Cell.xib in Resources */,
 				C26C11DE2105738E00B802A3 /* Main.storyboard in Resources */,
 			);
@@ -411,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2134C952105C81700860912 /* SampleType2Cell.swift in Sources */,
+				C26421CC2238C6DD008C0CB4 /* SampleTypeCollectionCell.swift in Sources */,
 				C27AF8DF21100FC7006A8CB8 /* UITableViewCell+Rx.swift in Sources */,
 				C2134C8D2105C7D100860912 /* SampleSectionModel.swift in Sources */,
 				C2134C8F2105C7E000860912 /* SampleViewController.swift in Sources */,
@@ -419,6 +434,7 @@
 				C2134C912105C7E900860912 /* SampleViewModel.swift in Sources */,
 				C27AF8DD21100FB8006A8CB8 /* UIViewExtension.swift in Sources */,
 				C2134C9B2105C9E500860912 /* UITableViewExtension.swift in Sources */,
+				C26421CA2238BE2A008C0CB4 /* SampleType3Cell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

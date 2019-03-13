@@ -21,6 +21,7 @@ class SampleViewController: UIViewController {
         didSet {
             tableView.registerCellNib(SampleType1Cell.self)
             tableView.registerCellNib(SampleType2Cell.self)
+            tableView.registerCellNib(SampleType3Cell.self)
         }
     }
     
@@ -40,6 +41,10 @@ class SampleViewController: UIViewController {
     
     @IBAction func addType2(_ sender: UIButton) {
         viewModel.addType2()
+    }
+    
+    @IBAction func addType3(_ sender: UIButton) {
+        viewModel.addType3()
     }
     
 }
