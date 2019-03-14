@@ -13,7 +13,12 @@ class SampleType1Cell: UITableViewCell {
     
     static let identity = "SampleType1Cell"
     
-    @IBOutlet weak var mainImageView: UIImageView!
+    @IBOutlet weak var mainImageView: UIImageView! {
+        didSet {
+            mainImageView.layer.cornerRadius = 4.0
+            mainImageView.clipsToBounds = true
+        }
+    }
     @IBOutlet weak var mainTextLabel: UILabel!
     @IBOutlet weak var bottomLabel: UILabel!
     private let randomText = String(repeating: "abc", count: Int.random(in: 10...100))
