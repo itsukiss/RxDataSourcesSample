@@ -11,26 +11,6 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-struct SampleData: IdentifiableType, Equatable {
-    let id = UUID().uuidString
-    let name: String
-    let image: UIImage?
-    
-    var identity: String {
-        return id
-    }
-}
-
-enum SectionID: Int, IdentifiableType {
-    case section1
-    case section2
-    case section3
-    
-    var identity: Int {
-        return self.rawValue
-    }
-}
-
 class SampleViewModel {
     
     // input

@@ -11,6 +11,8 @@ import UIKit
 
 class SampleType2Cell: UITableViewCell {
     
+    static let identity = "SampleType2Cell"
+    
     @IBOutlet weak var fullImageView: UIImageView!
     
     

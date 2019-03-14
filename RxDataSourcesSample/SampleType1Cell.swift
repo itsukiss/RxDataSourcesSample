@@ -11,6 +11,8 @@ import UIKit
 
 class SampleType1Cell: UITableViewCell {
     
+    static let identity = "SampleType1Cell"
+    
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var mainTextLabel: UILabel!
     

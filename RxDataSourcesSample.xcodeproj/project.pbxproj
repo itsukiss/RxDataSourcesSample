@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		09BD2057BAFC7B404BD26A76 /* Pods_RxDataSourcesSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50363A8A3D2C9CB86B480E32 /* Pods_RxDataSourcesSample.framework */; };
 		A3508865C3360183E0EB6ADA /* Pods_RxDataSourcesSampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 962ED7B535F48F7C98AE41EA /* Pods_RxDataSourcesSampleUITests.framework */; };
-		C2134C8D2105C7D100860912 /* SampleSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2134C8C2105C7D100860912 /* SampleSectionModel.swift */; };
+		C2134C8D2105C7D100860912 /* SampleAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2134C8C2105C7D100860912 /* SampleAdapter.swift */; };
 		C2134C8F2105C7E000860912 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2134C8E2105C7E000860912 /* SampleViewController.swift */; };
 		C2134C912105C7E900860912 /* SampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2134C902105C7E900860912 /* SampleViewModel.swift */; };
 		C2134C932105C80200860912 /* SampleType1Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2134C922105C80200860912 /* SampleType1Cell.swift */; };
@@ -23,6 +23,7 @@
 		C26421D02238C72E008C0CB4 /* SampleTypeCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C26421CF2238C72E008C0CB4 /* SampleTypeCollectionCell.xib */; };
 		C26421D42238F72D008C0CB4 /* SampleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26421D32238F72D008C0CB4 /* SampleDataProvider.swift */; };
 		C26421D622391D62008C0CB4 /* SampleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26421D522391D62008C0CB4 /* SampleService.swift */; };
+		C26421D822392744008C0CB4 /* SampleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26421D722392744008C0CB4 /* SampleDataModel.swift */; };
 		C26C11D92105738E00B802A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C11D82105738E00B802A3 /* AppDelegate.swift */; };
 		C26C11DE2105738E00B802A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26C11DC2105738E00B802A3 /* Main.storyboard */; };
 		C26C11E02105738E00B802A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C26C11DF2105738E00B802A3 /* Assets.xcassets */; };
@@ -60,7 +61,7 @@
 		962ED7B535F48F7C98AE41EA /* Pods_RxDataSourcesSampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxDataSourcesSampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		966B75F979452EED479594C4 /* Pods_RxDataSourcesSampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxDataSourcesSampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A715CC2EFD0E9463F7F487C0 /* Pods-RxDataSourcesSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxDataSourcesSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxDataSourcesSample/Pods-RxDataSourcesSample.debug.xcconfig"; sourceTree = "<group>"; };
-		C2134C8C2105C7D100860912 /* SampleSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSectionModel.swift; sourceTree = "<group>"; };
+		C2134C8C2105C7D100860912 /* SampleAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAdapter.swift; sourceTree = "<group>"; };
 		C2134C8E2105C7E000860912 /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		C2134C902105C7E900860912 /* SampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewModel.swift; sourceTree = "<group>"; };
 		C2134C922105C80200860912 /* SampleType1Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleType1Cell.swift; sourceTree = "<group>"; };
@@ -74,6 +75,7 @@
 		C26421CF2238C72E008C0CB4 /* SampleTypeCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleTypeCollectionCell.xib; sourceTree = "<group>"; };
 		C26421D32238F72D008C0CB4 /* SampleDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataProvider.swift; sourceTree = "<group>"; };
 		C26421D522391D62008C0CB4 /* SampleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleService.swift; sourceTree = "<group>"; };
+		C26421D722392744008C0CB4 /* SampleDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataModel.swift; sourceTree = "<group>"; };
 		C26C11D52105738E00B802A3 /* RxDataSourcesSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxDataSourcesSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C26C11D82105738E00B802A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C26C11DD2105738E00B802A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -148,7 +150,8 @@
 				C2134C9A2105C9E500860912 /* UITableViewExtension.swift */,
 				C27AF8DC21100FB8006A8CB8 /* UIViewExtension.swift */,
 				C27AF8DE21100FC7006A8CB8 /* UITableViewCell+Rx.swift */,
-				C2134C8C2105C7D100860912 /* SampleSectionModel.swift */,
+				C2134C8C2105C7D100860912 /* SampleAdapter.swift */,
+				C26421D722392744008C0CB4 /* SampleDataModel.swift */,
 				C2134C8E2105C7E000860912 /* SampleViewController.swift */,
 				C2134C902105C7E900860912 /* SampleViewModel.swift */,
 				C26421D32238F72D008C0CB4 /* SampleDataProvider.swift */,
@@ -431,9 +434,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2134C952105C81700860912 /* SampleType2Cell.swift in Sources */,
+				C26421D822392744008C0CB4 /* SampleDataModel.swift in Sources */,
 				C26421CC2238C6DD008C0CB4 /* SampleTypeCollectionCell.swift in Sources */,
 				C27AF8DF21100FC7006A8CB8 /* UITableViewCell+Rx.swift in Sources */,
-				C2134C8D2105C7D100860912 /* SampleSectionModel.swift in Sources */,
+				C2134C8D2105C7D100860912 /* SampleAdapter.swift in Sources */,
 				C2134C8F2105C7E000860912 /* SampleViewController.swift in Sources */,
 				C2134C932105C80200860912 /* SampleType1Cell.swift in Sources */,
 				C26421D42238F72D008C0CB4 /* SampleDataProvider.swift in Sources */,

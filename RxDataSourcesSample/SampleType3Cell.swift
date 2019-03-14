@@ -13,9 +13,11 @@ import RxCocoa
 
 class SampleType3Cell: UITableViewCell {
     
+    static let identity = "SampleType3Cell"
+    
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
-            collectionView.register(UINib(nibName: "SampleTypeCollectionCell", bundle: nil), forCellWithReuseIdentifier: "SampleTypeCollectionCell")
+            collectionView.register(UINib(nibName: SampleTypeCollectionCell.identity, bundle: nil), forCellWithReuseIdentifier: SampleTypeCollectionCell.identity)
         }
     }
     

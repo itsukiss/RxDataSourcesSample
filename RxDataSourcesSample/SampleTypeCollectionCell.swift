@@ -11,6 +11,8 @@ import UIKit
 
 class SampleTypeCollectionCell: UICollectionViewCell {
     
+    static let identity = "SampleTypeCollectionCell"
+    
     @IBOutlet weak var imageView: UIImageView!
     
     var data: SampleData? {
