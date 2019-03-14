@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kYG-46-Xkz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Vy-oO-eDb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -77,6 +77,127 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A3U-PZ-kQ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-167.19999999999999" y="161.46926536731635"/>
+        </scene>
+        <!--Base Collection View Controller-->
+        <scene sceneID="GO4-TK-ADG">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ey8-ZO-Rv6" customClass="BaseCollectionViewController" customModule="RxDataSourcesSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2pL-4q-cxu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aO7-zH-PN1">
+                                <rect key="frame" x="0.0" y="529" width="375" height="29"/>
+                                <segments>
+                                    <segment title="section1"/>
+                                    <segment title="section2"/>
+                                    <segment title="section3"/>
+                                </segments>
+                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ovI-fK-FUV">
+                                <rect key="frame" x="0.0" y="557" width="375" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="496-oh-uxX">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="110"/>
+                                        <state key="normal" title="Type1"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ClN-vg-ePW">
+                                        <rect key="frame" x="125" y="0.0" width="125" height="110"/>
+                                        <state key="normal" title="Type2"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGv-0W-EKn">
+                                        <rect key="frame" x="250" y="0.0" width="125" height="110"/>
+                                        <state key="normal" title="Type3"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="BVS-ZV-lxV"/>
+                                </constraints>
+                            </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="O5d-qF-d32">
+                                <rect key="frame" x="0.0" y="20" width="375" height="509"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lYA-sU-kNy">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="e0i-Ga-3Rw">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ovI-fK-FUV" firstAttribute="leading" secondItem="0ks-SB-Oc7" secondAttribute="leading" id="4GO-zt-zcR"/>
+                            <constraint firstItem="aO7-zH-PN1" firstAttribute="leading" secondItem="0ks-SB-Oc7" secondAttribute="leading" id="8ta-Na-3W3"/>
+                            <constraint firstItem="ovI-fK-FUV" firstAttribute="bottom" secondItem="0ks-SB-Oc7" secondAttribute="bottom" id="Edm-Lc-SXY"/>
+                            <constraint firstItem="ovI-fK-FUV" firstAttribute="top" secondItem="aO7-zH-PN1" secondAttribute="bottom" id="dXH-3g-Xuf"/>
+                            <constraint firstItem="O5d-qF-d32" firstAttribute="top" secondItem="0ks-SB-Oc7" secondAttribute="top" id="dvv-83-gqq"/>
+                            <constraint firstItem="O5d-qF-d32" firstAttribute="leading" secondItem="0ks-SB-Oc7" secondAttribute="leading" id="gjS-Fc-lni"/>
+                            <constraint firstItem="0ks-SB-Oc7" firstAttribute="trailing" secondItem="O5d-qF-d32" secondAttribute="trailing" id="meR-dV-TaQ"/>
+                            <constraint firstItem="0ks-SB-Oc7" firstAttribute="trailing" secondItem="ovI-fK-FUV" secondAttribute="trailing" id="r9h-hz-N6i"/>
+                            <constraint firstItem="aO7-zH-PN1" firstAttribute="trailing" secondItem="0ks-SB-Oc7" secondAttribute="trailing" id="sAR-LV-xuP"/>
+                            <constraint firstItem="aO7-zH-PN1" firstAttribute="top" secondItem="O5d-qF-d32" secondAttribute="bottom" id="swz-8l-sKz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0ks-SB-Oc7"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="O5d-qF-d32" id="eMT-Ar-N8H"/>
+                        <outlet property="segmentedControl" destination="aO7-zH-PN1" id="jqQ-Yg-Ttl"/>
+                        <outlet property="type1Button" destination="496-oh-uxX" id="fvY-YE-nPm"/>
+                        <outlet property="type2Button" destination="ClN-vg-ePW" id="Qes-di-DJP"/>
+                        <outlet property="type3Button" destination="uGv-0W-EKn" id="S1o-pI-UGI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wbx-dj-u9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-167" y="950"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="T7V-KP-xNv">
+            <objects>
+                <viewController id="3Vy-oO-eDb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uzc-r9-Fxu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUj-BY-wgC">
+                                <rect key="frame" x="153" y="206" width="69" height="30"/>
+                                <state key="normal" title="TableView"/>
+                                <connections>
+                                    <segue destination="kYG-46-Xkz" kind="show" id="cl4-Gu-TlO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yV-gn-Vyq">
+                                <rect key="frame" x="137" y="379" width="101" height="30"/>
+                                <state key="normal" title="CollectionView"/>
+                                <connections>
+                                    <segue destination="Ey8-ZO-Rv6" kind="show" id="QTk-7e-CWi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NUj-BY-wgC" firstAttribute="centerX" secondItem="Uzc-r9-Fxu" secondAttribute="centerX" id="IJ5-8K-1Xy"/>
+                            <constraint firstItem="2yV-gn-Vyq" firstAttribute="centerX" secondItem="Uzc-r9-Fxu" secondAttribute="centerX" id="Luo-Dm-SAA"/>
+                            <constraint firstItem="2yV-gn-Vyq" firstAttribute="top" secondItem="NUj-BY-wgC" secondAttribute="bottom" constant="143" id="M9x-42-Egk"/>
+                            <constraint firstItem="NUj-BY-wgC" firstAttribute="top" secondItem="rTb-xE-M0r" secondAttribute="top" constant="186" id="Oh8-xJ-Fw8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rTb-xE-M0r"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RzP-Hj-Qv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-958" y="676"/>
         </scene>
     </scenes>
 </document>

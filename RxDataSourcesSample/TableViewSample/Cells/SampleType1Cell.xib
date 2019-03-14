@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="68" id="jcI-s1-6WC" customClass="SampleType1Cell" customModule="RxDataSourcesSample">
-            <rect key="frame" x="0.0" y="0.0" width="370" height="68"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="jcI-s1-6WC" customClass="SampleType1Cell" customModule="RxDataSourcesSample">
+            <rect key="frame" x="0.0" y="0.0" width="370" height="70"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jcI-s1-6WC" id="tgw-e6-0vu">
-                <rect key="frame" x="0.0" y="0.0" width="370" height="67.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="370" height="69.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WzT-GS-Zm2">
-                        <rect key="frame" x="8" y="8" width="51.5" height="51.5"/>
+                        <rect key="frame" x="8" y="8" width="53.5" height="53.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="WzT-GS-Zm2" secondAttribute="height" multiplier="1:1" id="EDm-kc-fG5"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1b-oT-qgk">
-                        <rect key="frame" x="71.5" y="23" width="274.5" height="21"/>
+                        <rect key="frame" x="73.5" y="24.5" width="272.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -36,17 +34,17 @@
                 <constraints>
                     <constraint firstItem="a1b-oT-qgk" firstAttribute="leading" secondItem="WzT-GS-Zm2" secondAttribute="trailing" constant="12" id="E56-cz-kz0"/>
                     <constraint firstItem="WzT-GS-Zm2" firstAttribute="top" secondItem="tgw-e6-0vu" secondAttribute="top" constant="8" id="F4s-su-ogR"/>
-                    <constraint firstItem="a1b-oT-qgk" firstAttribute="centerY" secondItem="tgw-e6-0vu" secondAttribute="centerY" id="L6o-hi-srd"/>
+                    <constraint firstAttribute="bottom" secondItem="WzT-GS-Zm2" secondAttribute="bottom" constant="8" id="Kkh-p5-knU"/>
                     <constraint firstAttribute="trailingMargin" secondItem="a1b-oT-qgk" secondAttribute="trailing" constant="8" id="R9c-nd-Hq0"/>
                     <constraint firstItem="WzT-GS-Zm2" firstAttribute="leading" secondItem="tgw-e6-0vu" secondAttribute="leading" constant="8" id="VVS-f1-xZb"/>
-                    <constraint firstAttribute="bottom" secondItem="WzT-GS-Zm2" secondAttribute="bottom" constant="8" id="Xbv-Fa-muV"/>
+                    <constraint firstItem="a1b-oT-qgk" firstAttribute="centerY" secondItem="WzT-GS-Zm2" secondAttribute="centerY" id="dIP-4p-zQQ"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="mainImageView" destination="WzT-GS-Zm2" id="iaO-wf-Xzw"/>
                 <outlet property="mainTextLabel" destination="a1b-oT-qgk" id="HNF-EB-HBc"/>
             </connections>
-            <point key="canvasLocation" x="69" y="-36"/>
+            <point key="canvasLocation" x="68.799999999999997" y="-35.982008995502248"/>
         </tableViewCell>
     </objects>
 </document>
