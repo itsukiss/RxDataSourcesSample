@@ -36,6 +36,8 @@ class BaseCollectionAdapter: NSObject, UICollectionViewDelegateFlowLayout {
                 let cell = collection.dequeueReusableCell(withReuseIdentifier: BaseCollectionType3Cell.identity, for: indexPath) as! BaseCollectionType3Cell
                 cell.data = dataList.first
                 return cell
+            default:
+                return UICollectionViewCell()
             }
             
             }, configureSupplementaryView: { (ds ,cv, kind, ip) in
@@ -53,6 +55,8 @@ class BaseCollectionAdapter: NSObject, UICollectionViewDelegateFlowLayout {
             return CGSize(width: fullWidth, height: 150)
         case .sample3:
             return CGSize(width: 50, height: 50)
+        case .sample4:
+            return CGSize(width: fullWidth, height: 100)
         }
     }
 }

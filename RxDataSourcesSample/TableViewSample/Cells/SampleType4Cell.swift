@@ -1,8 +1,8 @@
 //
-//  SampleType3Cell.swift
+//  SampleType4Cell.swift
 //  RxDataSourcesSample
 //
-//  Created by 田中 厳貴 on 2019/03/13.
+//  Created by 田中 厳貴 on 2019/03/14.
 //  Copyright © 2019年 田中 厳貴. All rights reserved.
 //
 
@@ -11,13 +11,13 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class SampleType3Cell: UITableViewCell {
+class SampleType4Cell: UITableViewCell {
     
-    static let identity = "SampleType3Cell"
+    static let identity = "SampleType4Cell"
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
-            collectionView.registerCellNib(SampleType3CollectionCell.self)
+            collectionView.registerCellNib(SampleType4CollectionCell.self)
         }
     }
     

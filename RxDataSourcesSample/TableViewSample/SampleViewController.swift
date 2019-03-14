@@ -19,6 +19,7 @@ class SampleViewController: UIViewController {
     @IBOutlet weak var type1Button: UIButton!
     @IBOutlet weak var type2Button: UIButton!
     @IBOutlet weak var type3Button: UIButton!
+    @IBOutlet weak var type4Button: UIButton!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     @IBOutlet weak var tableView: UITableView! {
@@ -26,6 +27,8 @@ class SampleViewController: UIViewController {
             tableView.registerCellNib(SampleType1Cell.self)
             tableView.registerCellNib(SampleType2Cell.self)
             tableView.registerCellNib(SampleType3Cell.self)
+            tableView.registerCellNib(SampleType4Cell.self)
+            tableView.estimatedRowHeight = 100
         }
     }
     
@@ -34,6 +37,7 @@ class SampleViewController: UIViewController {
             tapType1: type1Button.rx.tap.asObservable(),
             tapType2: type2Button.rx.tap.asObservable(),
             tapType3: type3Button.rx.tap.asObservable(),
+            tapType4: type4Button.rx.tap.asObservable(),
             selectSection: segmentedControl.rx.value.asObservable()
         )
         return SampleViewModel(input: input)

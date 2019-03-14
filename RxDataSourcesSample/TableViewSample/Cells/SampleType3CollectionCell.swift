@@ -1,5 +1,5 @@
 //
-//  SampleTypeCollectionCell.swift
+//  SampleType3CollectionCell.swift
 //  RxDataSourcesSample
 //
 //  Created by 田中 厳貴 on 2019/03/13.
@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-class SampleTypeCollectionCell: UICollectionViewCell {
+class SampleType3CollectionCell: UICollectionViewCell {
     
-    static let identity = "SampleTypeCollectionCell"
+    static let identity = "SampleType3CollectionCell"
     
     @IBOutlet weak var imageView: UIImageView!
     

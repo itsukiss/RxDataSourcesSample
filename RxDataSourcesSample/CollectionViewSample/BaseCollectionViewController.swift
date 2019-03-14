@@ -35,6 +35,7 @@ class BaseCollectionViewController: UIViewController {
             tapType1: type1Button.rx.tap.asObservable(),
             tapType2: type2Button.rx.tap.asObservable(),
             tapType3: type3Button.rx.tap.asObservable(),
+            tapType4: type3Button.rx.tap.asObservable(),
             selectSection: segmentedControl.rx.value.asObservable()
         )
         return SampleViewModel(input: input)

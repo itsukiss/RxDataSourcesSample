@@ -35,6 +35,7 @@ enum SampleSectionItem: IdentifiableType, Equatable {
     case sample1(data: SampleData)
     case sample2(data: SampleData)
     case sample3(dataList: [SampleData])
+    case sample4(dataList: [SampleData])
     var identity: String {
         switch self {
         case .sample1(let data):
@@ -42,6 +43,8 @@ enum SampleSectionItem: IdentifiableType, Equatable {
         case .sample2(let data):
             return data.id
         case .sample3(let dataList):
+            return dataList.map { $0.id }.joined()
+        case .sample4(let dataList):
             return dataList.map { $0.id }.joined()
         }
     }

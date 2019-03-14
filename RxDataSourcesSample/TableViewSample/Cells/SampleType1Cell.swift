@@ -15,12 +15,15 @@ class SampleType1Cell: UITableViewCell {
     
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var mainTextLabel: UILabel!
+    @IBOutlet weak var bottomLabel: UILabel!
+    private let randomText = String(repeating: "abc", count: Int.random(in: 10...100))
     
     var data: SampleData? {
         didSet {
             guard let data = data else { return }
             mainTextLabel.text = data.name
             mainImageView.image = data.image
+            bottomLabel.text = randomText
         }
     }
 }

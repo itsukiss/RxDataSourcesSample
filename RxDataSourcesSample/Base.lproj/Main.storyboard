@@ -34,16 +34,20 @@
                                 <rect key="frame" x="0.0" y="557" width="375" height="110"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="co0-gj-Hu9">
-                                        <rect key="frame" x="0.0" y="0.0" width="125" height="110"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="110"/>
                                         <state key="normal" title="Type1"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdp-AV-52Y">
-                                        <rect key="frame" x="125" y="0.0" width="125" height="110"/>
+                                        <rect key="frame" x="94" y="0.0" width="93.5" height="110"/>
                                         <state key="normal" title="Type2"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEA-DN-Nvq">
-                                        <rect key="frame" x="250" y="0.0" width="125" height="110"/>
+                                        <rect key="frame" x="187.5" y="0.0" width="94" height="110"/>
                                         <state key="normal" title="Type3"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuy-dg-fgo">
+                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="110"/>
+                                        <state key="normal" title="Type4"/>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -72,6 +76,7 @@
                         <outlet property="type1Button" destination="co0-gj-Hu9" id="XK4-R4-UC7"/>
                         <outlet property="type2Button" destination="xdp-AV-52Y" id="cRt-fi-UJS"/>
                         <outlet property="type3Button" destination="JEA-DN-Nvq" id="xMR-wE-EiH"/>
+                        <outlet property="type4Button" destination="kuy-dg-fgo" id="CbD-KQ-oZG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A3U-PZ-kQ6" userLabel="First Responder" sceneMemberID="firstResponder"/>

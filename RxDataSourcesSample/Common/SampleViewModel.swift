@@ -24,6 +24,7 @@ class SampleViewModel {
         tapType1: Observable<Void>,
         tapType2: Observable<Void>,
         tapType3: Observable<Void>,
+        tapType4: Observable<Void>,
         selectSection: Observable<Int>
     )
     
@@ -65,6 +66,13 @@ class SampleViewModel {
         input.tapType3
             .map { dependency.provider.getMockData(count: 10) }
             .map { SampleSectionItem.sample3(dataList: $0) }
+            .map { dependency.service.addSectionModel(storedData: sampleDataRelay.value, sectionID: selectSectionRelay.value, item: $0) }
+            .bind(to: sampleDataRelay)
+            .disposed(by: disposeBag)
+        
+        input.tapType4
+            .map { dependency.provider.getMockData(count: 10) }
+            .map { SampleSectionItem.sample4(dataList: $0) }
             .map { dependency.service.addSectionModel(storedData: sampleDataRelay.value, sectionID: selectSectionRelay.value, item: $0) }
             .bind(to: sampleDataRelay)
             .disposed(by: disposeBag)
