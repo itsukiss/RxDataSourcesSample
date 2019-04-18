@@ -21,6 +21,7 @@ class SampleType3Cell: UITableViewCell {
         }
     }
     
+    var adapter: SampleType3Adapter!
     var disposeBag = DisposeBag()
     
     override func prepareForReuse() {

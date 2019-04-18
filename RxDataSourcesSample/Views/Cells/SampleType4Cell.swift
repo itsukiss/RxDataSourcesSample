@@ -20,7 +20,7 @@ class SampleType4Cell: UITableViewCell {
             collectionView.registerCellNib(SampleType4CollectionCell.self)
         }
     }
-    
+    var adapter: SampleType4Adapter!
     var disposeBag = DisposeBag()
     
     override func prepareForReuse() {

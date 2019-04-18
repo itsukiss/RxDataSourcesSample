@@ -13,14 +13,10 @@ import RxCocoa
 
 final class SampleAdapter: NSObject, UITableViewDelegate {
     
-    private weak var viewModel: SampleViewModel?
-    var sample3Adapter: SampleType3Adapter!
-    var sample4Adapter: SampleType4Adapter!
+    private var viewModel: SampleViewModel
     
     init(viewModel: SampleViewModel) {
         self.viewModel = viewModel
-        sample3Adapter = SampleType3Adapter(viewModel: viewModel)
-        sample4Adapter = SampleType4Adapter(viewModel: viewModel)
     }
     
     lazy var dataSource = RxTableViewSectionedAnimatedDataSource<SampleSectionModel>.init(animationConfiguration: AnimationConfiguration(insertAnimation: .fade, reloadAnimation: .none, deleteAnimation: .fade), configureCell: { [weak self] dataSource, table, indexPath, item in
@@ -36,19 +32,21 @@ final class SampleAdapter: NSObject, UITableViewDelegate {
             cell.data = data
             return cell
         case .sample3(let dataList):
-            let cell = table.dequeueReusableCell(withIdentifier: SampleType3Cell.identity, for: indexPath) as! SampleType3Cell
+            let cell: SampleType3Cell = table.dequeueReusableCell(withIdentifier: SampleType3Cell.identity, for: indexPath) as! SampleType3Cell
             let sectionModel = AnimatableSectionModel(model: "collectionSection1", items: dataList)
-            cell.collectionView.rx.setDelegate(self.sample3Adapter).disposed(by: cell.disposeBag)
+            cell.adapter = SampleType3Adapter(viewModel: self.viewModel)
+            cell.collectionView.rx.setDelegate(cell.adapter).disposed(by: cell.disposeBag)
             Observable.just([sectionModel])
-                .bind(to: cell.collectionView.rx.items(dataSource: self.sample3Adapter.dataSource))
+                .bind(to: cell.collectionView.rx.items(dataSource: cell.adapter.dataSource))
                 .disposed(by: cell.disposeBag)
             return cell
         case .sample4(let dataList):
-            let cell = table.dequeueReusableCell(withIdentifier: SampleType4Cell.identity, for: indexPath) as! SampleType4Cell
+            let cell: SampleType4Cell = table.dequeueReusableCell(withIdentifier: SampleType4Cell.identity, for: indexPath) as! SampleType4Cell
             let sectionModel = AnimatableSectionModel(model: "collectionSection1", items: dataList)
-             cell.collectionView.rx.setDelegate(self.sample4Adapter).disposed(by: cell.disposeBag)
+            cell.adapter = SampleType4Adapter(viewModel: self.viewModel)
+            cell.collectionView.rx.setDelegate(cell.adapter).disposed(by: cell.disposeBag)
             Observable.just([sectionModel])
-                .bind(to: cell.collectionView.rx.items(dataSource: self.sample4Adapter.dataSource))
+                .bind(to: cell.collectionView.rx.items(dataSource: cell.adapter.dataSource))
                 .disposed(by: cell.disposeBag)
             return cell
         }
